@@ -2,6 +2,8 @@ const Quiz = require('../models/quizModel');
 const Result = require('../models/resultModel');
 
 // Submit Answer
+// o	Endpoint to submit an answer for a specific question in a quiz.
+// o	Return immediate feedback if the answer is correct or incorrect and provide the correct answer if the user was wrong.
 const submitAnswer = async (req, res) => {
   const { userId, quizId, questionId, selected_option } = req.body;
 
@@ -83,6 +85,9 @@ const submitAnswer = async (req, res) => {
 };
 
 // Get Results
+// o	Endpoint to get the user's results for a specific quiz.
+// o	Return the score and a summary of the user's answers (correct/incorrect).
+
 const getResults = async (req, res) => {
   try {
     const { quiz_id, user_id } = req.query;

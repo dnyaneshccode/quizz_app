@@ -59,7 +59,7 @@ A Node.js API for a quiz application that allows users to create quizzes, submit
 ### API Endpoints
 
 1. **Create a New Quiz:**
-    URL - http://127.0.0.1:3000/api/quizzes
+    URL - http://127.0.0.1:3000/api/create_quiz
     METHOD - POST
     REQUEST BODY - :
             {
@@ -90,14 +90,14 @@ A Node.js API for a quiz application that allows users to create quizzes, submit
 
 
 2. **Fetch a Quiz by ID:**
-    URL - http://127.0.0.1:3000/api/quizzes/:id
+    URL - http://127.0.0.1:3000/api/get_quiz/:id
     METHOD - GET
     DESCRIPTION - Fetch a quiz by its ID without revealing the correct answers.
 
 
 
 3. **Submit an answer for a specific question in a quiz:**
-    URL - http://127.0.0.1:3000/api/answers
+    URL - http://127.0.0.1:3000/api/submit_answer
     METHOD - POST
     DESCRIPTION - Submit an answer for a specific question in a quiz.
     REQUEST BODY - {
@@ -111,7 +111,7 @@ A Node.js API for a quiz application that allows users to create quizzes, submit
 
 
 4. **Retrieve the user's results for a specific quiz:**
-    URL - http://127.0.0.1:3000/api/results
+    URL - http://127.0.0.1:3000/api/get_results
     METHOD - GET
     DESCRIPTION - Fetch a quiz by its ID without revealing the correct answers.
     Request Parameters:
@@ -119,3 +119,52 @@ A Node.js API for a quiz application that allows users to create quizzes, submit
         user_id: The ID of the user.
         http://127.0.0.1:3000/api/results?quiz_id=674590cf81d5f645debeff2f&user_id=554590cf81d5f645debeff32
 
+
+
+5. **Update Quiz:**
+    URL - http://127.0.0.1:3000/api/update_quiz/:id
+    METHOD - PATCH
+    DESCRIPTION - Update a quiz by its ID.
+    REQUEST BODY - :
+            {
+                "title": "Updated Quiz Title",
+                "description": "This is an updated description for the quiz.",
+                "questions": [
+                    {
+                        "text": "What is the capital of France?",
+                        "options": [
+                            "Berlin",
+                            "Madrid",
+                            "Paris",
+                            "Rome"
+                        ],
+                        "correct_option": 2
+                    },
+                    {
+                        "text": "Which planet is known as the Red Planet?",
+                        "options": [
+                            "Earth",
+                            "Mars",
+                            "Jupiter",
+                            "Venus"
+                        ],
+                        "correct_option": 1
+                    },
+                    {
+                        "text": "What is 2 + 2?",
+                        "options": [
+                            "3",
+                            "4",
+                            "5",
+                            "6"
+                        ],
+                        "correct_option": 1
+                    }
+                ]
+}
+
+
+5. **Delete Quiz:**
+    URL - http://127.0.0.1:3000/api/delete_quiz/:id
+    METHOD - DELETE
+    DESCRIPTION - Delete a quiz by its ID.
