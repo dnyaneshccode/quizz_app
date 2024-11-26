@@ -9,6 +9,16 @@ const morgan = require('morgan');
 dotenv.config();
 const app = express();
 
+app.get('/', (req, res) => {
+    res.status(200).json({
+        status: true,
+        status_code: 200,
+        message: "Welcome to the Quiz Application Backend",
+        data: {}
+    });
+});
+
+
 // Middleware
 app.use(loggerMiddleware); // Use the logger middleware
 app.use(bodyParser.json());
