@@ -1,0 +1,47 @@
+# Node.js dependencies
+/node_modules/
+
+# Environment variables
+# .env
+
+# Logs
+*.log
+logs/
+
+# npm package lock files
+package-lock.json
+yarn.lock
+
+# Build output
+/dist/
+/build/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# IDE files
+/.idea/
+/.vscode/
+
+# Test coverage
+/coverage/
+
+# Dependency directory
+/node_modules/
+
+# .env file should not be tracked (sensitive information)
+.env.local
+.env.*.local
+
+# Ignore IDE specific files
+.idea/
+.vscode/
+
+# Ignore optional npm packages
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Ignore docker-compose override files
+docker-compose.override.yml
