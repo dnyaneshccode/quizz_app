@@ -29,7 +29,8 @@ A Node.js API for a quiz application that allows users to create quizzes, submit
     - docker-compose up --build
 
 4. **Access the API:**
-
+    http://127.0.0.1:3000/
+    
 5. **Stopping the Containers:**
     - docker-compose down
 
