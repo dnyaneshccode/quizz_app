@@ -183,4 +183,5 @@ A Node.js API for a quiz application that allows users to create quizzes, submit
 
 5. **For running the test cases run the command. ==>** npm test
 
-6. I have tested at my local all the test case has been passed
+6. I have tested at my local all the test case has been passed, for your reference i have attached the screenshot file name => 
+  PASSED_TEST_CASES_FOR_QUIZZ_APP
