@@ -54,7 +54,7 @@ A Node.js API for a quiz application that allows users to create quizzes, submit
 4. **Run the Application:**
    - npm run dev
 
-**********************************************************API ENDPOINTS******************************************************************************
+**************************************API ENDPOINTS*******************************************
 
 ### API Endpoints
 
@@ -168,3 +168,19 @@ A Node.js API for a quiz application that allows users to create quizzes, submit
     URL - http://127.0.0.1:3000/api/delete_quiz/:id
     METHOD - DELETE
     DESCRIPTION - Delete a quiz by its ID.
+
+
+
+*****************************FOR RUNNING TEST CASES FOLLOW ABOVE INSTRUCTIONS****************************
+
+1. **In app.js file comment this line. ==>** app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+2. **Then add this line of code in app.js file I have allready added just uncomment that line.** ==> module.exports = app;
+
+3. Inside the app.test.js file all the written test are available make sure you have to passed the correct quiz, user, question ids of the respective records and that records should be available in your local database.
+
+4. **After adding the ids in app.test.js file run the command. ==>** npm test
+
+5. **For running the test cases run the command. ==>** npm test
+
+6. I have tested at my local all the test case has been passed
