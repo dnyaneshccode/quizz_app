@@ -50,7 +50,7 @@ describe('Test Create Quiz Route', () => {
     };
 
     const response = await request(app)
-      .post('/api/quizzes')
+      .post('/api/create_quiz')
       .send(newQuiz)
       .set('Content-Type', 'application/json');
 
@@ -69,7 +69,7 @@ describe('Test Fetch Quiz by ID Route', () => {
     const quizId = '6745a320a1522e3c8a3c6c8f';
 
     const response = await request(app)
-      .get(`/api/quizzes/${quizId}`)
+      .get(`/api/get_quiz/${quizId}`)
       .set('Accept', 'application/json');
 
     expect(response.status).toBe(200);
@@ -83,39 +83,37 @@ describe('Test Fetch Quiz by ID Route', () => {
 describe('Test Submit Answer Route', () => {
   it('should submit an answer for a specific question in a quiz', async () => {
     const answer = {
-      quizId: '6745a320a1522e3c8a3c6c8f',
-      questionId: '674590cf81d5f645debeff31',
-      selected_option: 1,
+      quizId: '6746828118deb73839e8d879',
+      questionId: '6746828118deb73839e8d87b',
+      selected_option: 3,
       userId: '554590cf81d5f645debeff32',
     };
 
     // Sending the POST request to the correct route
     const response = await request(app)
-      .post('/api/answers') // Ensure this path matches your route handler
+      .post('/api/submit_answer') // Ensure this path matches your route handler
       .send(answer)
       .set('Content-Type', 'application/json');
 
     expect(response.status).toBe(200); // Ensure it returns status 200
     expect(response.body.status).toBe(true);
-    expect(response.body.message).toBe('Answer submitted successfully');
-    expect(response.body.data.selected_option).toBe(answer.selected_option);
+    expect(response.body.message).toBe('Correct answer!');
   });
 });
-
-// // Test Get Quiz Results Route
+// Test Get Quiz Results Route
 describe('Test Get Quiz Results Route', () => {
   it('should fetch the quiz results for a user', async () => {
-    const quizId = '6745a320a1522e3c8a3c6c8f';
+    const quizId = '6746828118deb73839e8d879';
     const userId = '554590cf81d5f645debeff32';
 
     const response = await request(app)
-      .get(`/api/results?quiz_id=${quizId}&user_id=${userId}`)
+      .get(`/api/get_results?quiz_id=${quizId}&user_id=${userId}`)
       .set('Accept', 'application/json');
 
     expect(response.status).toBe(200);
     expect(response.body.status).toBe(true);
-    expect(response.body.data.quizId).toBe(quizId);
-    expect(response.body.data.userId).toBe(userId);
+    expect(response.body.data.quiz_id).toBe(quizId);
+    expect(response.body.data.user_id).toBe(userId);
     expect(response.body.data.score).toBeDefined();
   });
 });

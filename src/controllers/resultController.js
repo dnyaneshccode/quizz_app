@@ -23,7 +23,7 @@ const submitAnswer = async (req, res) => {
       return res.status(404).json({
         status: false,
         status_code: 404,
-        message: 'Quiz not found',
+        message: 'Quiz not found with requested id',
       });
     }
 
@@ -32,7 +32,7 @@ const submitAnswer = async (req, res) => {
       return res.status(404).json({
         status: false,
         status_code: 404,
-        message: 'Question not found',
+        message: 'Quiz not found with requested id',
       });
     }
 

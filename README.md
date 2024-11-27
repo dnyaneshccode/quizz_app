@@ -54,7 +54,7 @@ A Node.js API for a quiz application that allows users to create quizzes, submit
 4. **Run the Application:**
    - npm run dev
 
-
+**********************************************************API ENDPOINTS******************************************************************************
 
 ### API Endpoints
 
